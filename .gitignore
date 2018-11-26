@@ -1,0 +1,15 @@
+# Compiled files
+*.tfstate
+*.tfstate.backup
+
+# Module directory
+.terraform/
+.terragrunt
+*.tfstate
+*.tfstate.backup
+environments/poc/.terraform/*
+
+
+# Variable files
+*.tfvars
+*.cer
