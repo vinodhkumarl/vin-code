@@ -4,7 +4,9 @@ pipeline {
             label 'master'
         }
     }
-    stages test {
+
+    stages {
+
         stage('terraform started') {
             steps {
                 sh 'echo "Started...!" '
@@ -20,5 +22,7 @@ pipeline {
                 sh 'echo "Ended....!!"'
             }
         }
+
+
     }
 }
