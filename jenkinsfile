@@ -14,7 +14,7 @@ pipeline {
         }
         stage('terraform plan') {
             steps {
-                'cd environments/test; terraform plan'
+                sh 'cd environments/test; terraform plan'
             }
         }
         stage('terraform ended') {
