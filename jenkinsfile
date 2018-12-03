@@ -1,0 +1,41 @@
+pipeline {
+    agent {
+        node {
+            label 'master'
+        }
+    }
+    stages Dev {
+        stage('terraform started') {
+            steps {
+                sh 'echo "Started...!" '
+            }
+        }
+        stage('terraform plan') {
+            steps {
+                'cd environments/dev; terraform plan'
+            }
+        }
+        stage('terraform ended') {
+            steps {
+                sh 'echo "Ended....!!"'
+            }
+        }
+    }
+    stages test {
+        stage('terraform started') {
+            steps {
+                sh 'echo "Started...!" '
+            }
+        }
+        stage('terraform plan') {
+            steps {
+                'cd environments/test; terraform plan'
+            }
+        }
+        stage('terraform ended') {
+            steps {
+                sh 'echo "Ended....!!"'
+            }
+        }
+    }
+}
