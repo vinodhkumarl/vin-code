@@ -5,11 +5,6 @@ node {
   // Mark the code checkout 'Checkout'....
   stage 'Checkout'
 
-  // Get the Terraform tool.
-  def tfHome = tool name: 'Terraform'
-  env.PATH = "${tfHome}:${env.PATH}"
-  wrap([$class: 'AnsiColorBuildWrapper', colorMapName: 'xterm']) {
-
           // Mark the code build 'plan'....
           stage name: 'Plan', concurrency: 1
           // Output Terraform version
