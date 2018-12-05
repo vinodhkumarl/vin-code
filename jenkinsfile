@@ -5,7 +5,7 @@ node {
   // Mark the code checkout 'Checkout'....
   stage 'Checkout'
 
-  env.PATH = "${env.PATH} {
+  env.PATH = "${env.PATH}" {
 
           // Mark the code build 'plan'....
           stage name: 'Plan', concurrency: 1
